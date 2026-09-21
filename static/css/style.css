@@ -1,7 +1,23 @@
+@font-face {
+  font-family: "ark-pixel-12px-proportional-zh_cn.otf";
+  src: url("/fonts/ark-pixel-12px-proportional-zh_cn.otf-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MyFont";
+  src: url("/fonts/ark-pixel-12px-proportional-zh_cn.otf-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 body {
   max-width: 720px;
   margin: 2rem auto;
   padding: 0 1rem;
-  font-family: system-ui, sans-serif;
+  font-family: "MyFont", -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
   line-height: 1.6;
+sans-serif;
 }

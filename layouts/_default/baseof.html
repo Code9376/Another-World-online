@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ site.Title }}</title>
+ <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>

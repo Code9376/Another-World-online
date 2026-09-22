@@ -1,7 +1,92 @@
+@font-face {
+  font-family: "ArkPixel";
+  src: url("/fonts/ark-pixel-12px-proportional-zh_cn.otf.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   max-width: 720px;
   margin: 2rem auto;
   padding: 0 1rem;
-  font-family: system-ui, sans-serif;
   line-height: 1.6;
+  font-family: "ArkPixel", -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+
+#intro {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  color: #000000;
+  transition: opacity 0.8s ease;
+  font-family: "ArkPixel", monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  #intro {
+    background: #000000;
+    color: #ffffff;
+  }
+}
+
+.intro-inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.intro-title {
+  font-family: "ArkPixel", monospace;
+  font-size: clamp(36px, 8vw, 72px);  
+  margin: 0;
+  opacity: 0;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.intro-line {
+  font-family: "ArkPixel", monospace;
+  font-size: clamp(14px, 3vw, 24px);   
+  min-height: 1.4em;
+  letter-spacing: 0.05em;
+  white-space: nowrap;             
+}
+
+#intro.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.intro-prompt {
+  font-family: "ArkPixel", monospace;
+  font-size: clamp(14px, 3vw, 24px);
+  margin-right: 0.3em;
+  animation: blinkPrompt 0.5s step-end 3;  /* 闪 3 次 */
+  display: inline-block;
+}
+
+@keyframes blinkPrompt {
+  50% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #intro {
+    display: none;
+  }
 }

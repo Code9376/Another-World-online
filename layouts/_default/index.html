@@ -1,0 +1,21 @@
+{{ define "main" }}
+<div id="intro">
+  <div class="intro-inner">
+    <h1 class="intro-title">Another World</h1>
+<p class="intro-line">
+  <span class="intro-prompt">▶</span><span id="line1"></span>
+</p>
+<p class="intro-line" id="line2"></p>
+  </div>
+</div>
+
+<h1>{{ .Title }}</h1>
+<ul>
+  {{ range .Pages }}
+    <li>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      <time>{{ .Date.Format "2006-01-02" }}</time>
+    </li>
+  {{ end }}
+</ul>
+{{ end }}

@@ -32,8 +32,9 @@ document.addEventListener("DOMContentLoaded", function () {
     step();
   }
 
- setTimeout(function () {
-  typeText(line1, text1, function () {
+  setTimeout(function () {
+    typeText(line1, text1, function () {
+      setTimeout(function () {
         typeText(line2, text2, function () {
           setTimeout(function () {
             intro.classList.add("hide");

@@ -90,3 +90,24 @@ a {
     display: none;
   }
 }
+
+/* ============================================
+   社交链接
+   ============================================ */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.social-links img {
+  width: 24px;
+  height: 24px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.social-links img:hover {
+  opacity: 1;
+}

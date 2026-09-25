@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<link rel="icon" href="/favicon.ico" type="image/x-icon">
   <meta charset="UTF-8">
- <title>{{ if .IsHome }}{{ site.Title }} | {{ site.Params.description }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
+  <title>{{ if .IsHome }}{{ site.Title }} | {{ site.Params.description }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
 <body>
-  <header>
-    <a href="/">{{ site.Title }}</a>
-  </header>
-
-  <main>
-    {{ block "main" . }}{{ end }}
-  </main>
-
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="site-title">
+        <a href="/">{{ site.Title }}</a>
+      </div>
+      <nav>
+        <a href="/">首页</a>
+        <a href="/posts/">文章</a>
+        <a href="/about/">关于</a>
+      </nav>
+    </aside>
+    <main class="content">
+      {{ block "main" . }}{{ end }}
+    </main>
+  </div>
+  <footer>
+    <div class="social-links">
   <footer>
 <footer>
   <div class="social-links">
@@ -24,9 +33,9 @@
     <a href="https://b23.tv/uie0R9b" target="_blank" rel="noopener">
       <img src="/icons/bilibili.svg" alt="Bilibili">
     </a>
-  </div>
+ </div>
+  </footer>
   <p>© {{ now.Year }} {{ site.Title }}</p>
-</footer>
-<script src="/js/main.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 </html>

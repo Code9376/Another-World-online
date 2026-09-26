@@ -25,13 +25,15 @@
     <a href="/terms/" class="choice">〓当然！〓</a>
   </div>
 </div>
-<h1>{{ .Title }}</h1>
-<ul>
-  {{ range .Pages }}
-    <li>
-      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-      <time>{{ .Date.Format "2006-01-02" }}</time>
-    </li>
-  {{ end }}
-</ul>
+<div class="updates-box">
+  <h2>最新更新</h2>
+  <ul class="updates-list">
+    {{ range first 5 (where .Site.RegularPages "Section" "posts") }}
+      <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <time>{{ .Date.Format "2006-01-02" }}</time>
+      </li>
+    {{ end }}
+  </ul>
+</div>
 {{ end }}

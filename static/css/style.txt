@@ -183,3 +183,35 @@ a {
     padding: 1.5rem 1rem;
   }
 }
+
+/* ============================================
+   首页介绍框
+   ============================================ */
+.home-intro {
+  border: 1px solid currentColor;
+  padding: 2rem;
+  margin: 2rem 0;
+  line-height: 1.8;
+}
+
+.home-intro h1 {
+  margin-top: 0;
+  font-size: clamp(20px, 4vw, 32px);
+}
+
+.login-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+
+.choice {
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.choice:hover {
+  opacity: 1;
+}

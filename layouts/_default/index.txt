@@ -8,7 +8,23 @@
 <p class="intro-line" id="line2"></p>
   </div>
 </div>
+<div class="home-intro">
+  <h1>Another World-online欢迎您的到来！</h1>
+  <p>感谢您选择登录游玩 Another World-online。</p>
 
+  <p>
+    服务器开放时间：全天<br>
+    服务器性质：Liminality的避难创作空间<br>
+    最终解释权：归站长Liminality所有
+  </p>
+
+  <p>要登录游戏吗？</p>
+
+  <div class="login-choices">
+    <a href="/terms/" class="choice">〓是。〓</a>
+    <a href="/terms/" class="choice">〓当然！〓</a>
+  </div>
+</div>
 <h1>{{ .Title }}</h1>
 <ul>
   {{ range .Pages }}

@@ -238,7 +238,7 @@ a {
 
 .updates-list li {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 1rem;
   padding: 0.4rem 0;
 }

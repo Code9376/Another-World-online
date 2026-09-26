@@ -1,28 +1,7 @@
 ---
 title: "绑定"
-
+date：20■■-07-32
 draft: false
 ---
 
 联系 Liminality：
-
-<div class="contact-list">
-
-  <a class="contact-item" href="https://xhslink.cn/o/13uKdbWCTz4" target="_blank" rel="noopener">
-    <span class="contact-name">小红书</span>
-    <span class="contact-value">点击访问主页</span>
-  </a>
-
-  <a class="contact-item" href="https://b23.tv/uie0R9b" target="_blank" rel="noopener">
-    <span class="contact-name">Bilibili</span>
-    <span class="contact-value">点击访问主页</span>
-  </a>
-
-<div class="contact-item">
-  <span class="contact-name">邮箱</span>
-  <span class="contact-value">
-    Polaris9376<span class="at-symbol"></span>gmail.com
-  </span>
-</div>
-
-</div>

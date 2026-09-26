@@ -1,7 +1,9 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
+  <p class="post-date">Date: 20■■-07-32</p>
   {{ .Content }}
 
+  <div class="contact-list">
   <div class="contact-list">
     <a class="contact-item" href="https://xhslink.cn/o/13uKdbWCTz4" target="_blank" rel="noopener">
       <span class="contact-name">小红书</span>

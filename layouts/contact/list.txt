@@ -4,7 +4,6 @@
   {{ .Content }}
 
   <div class="contact-list">
-  <div class="contact-list">
     <a class="contact-item" href="https://xhslink.cn/o/13uKdbWCTz4" target="_blank" rel="noopener">
       <span class="contact-name">小红书</span>
       <span class="contact-value">点击访问主页</span>

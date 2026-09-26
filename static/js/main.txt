@@ -64,3 +64,30 @@ document.addEventListener("DOMContentLoaded", function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 })();
+// 角色页：标题打字机 + 图片切换
+(function () {
+  const title = document.querySelector(".data-title");
+  if (title) {
+    const text = title.dataset.title || title.textContent;
+    title.textContent = "";
+    let i = 0;
+    (function type() {
+      if (i < text.length) {
+        title.textContent += text.charAt(i);
+        i++;
+        setTimeout(type, 150);
+      }
+    })();
+  }
+
+  const mainImg = document.getElementById("data-img");
+  const thumbs = document.querySelectorAll(".thumb");
+  if (mainImg && thumbs.length) {
+    mainImg.src = thumbs[0].dataset.src;
+    thumbs.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        mainImg.src = btn.dataset.src;
+      });
+    });
+  }
+})();

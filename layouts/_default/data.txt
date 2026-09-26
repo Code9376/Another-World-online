@@ -1,0 +1,24 @@
+{{ define "main" }}
+<div class="data-page">
+  <div class="data-text">
+    <h1 class="data-title" data-title="{{ .Title }}">读取中……</h1>
+    {{ .Content }}
+  </div>
+
+  <div class="data-image">
+    {{ $imgs := .Resources.Match "*" }}
+    {{ $imgs = where $imgs "ResourceType" "image" }}
+
+    {{ if $imgs }}
+      <img id="data-img" src="{{ (index $imgs 0).RelPermalink }}" alt="{{ .Title }}">
+      <div class="data-thumbs">
+        {{ range $i, $img := $imgs }}
+          <button class="thumb" data-src="{{ $img.RelPermalink }}">图{{ add $i 1 }}</button>
+        {{ end }}
+      </div>
+    {{ else }}
+      <p>（这个角色还没有上传图片）</p>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

@@ -329,3 +329,64 @@ a {
   opacity: 1;
   transform: translateY(-3px);
 }
+
+/* 存档首页的角色入口 */
+.data-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.data-link {
+  border: 1px solid currentColor;
+  padding: 0.8rem 1.2rem;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.data-link:hover {
+  opacity: 1;
+}
+
+/* 角色详情页：左文右图 */
+.data-page {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.data-text {
+  flex: 1;
+}
+
+.data-image {
+  flex: 1;
+}
+
+.data-image img {
+  width: 100%;
+  border: 1px solid currentColor;
+}
+
+.data-thumbs {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.thumb {
+  border: 1px solid currentColor;
+  background: transparent;
+  color: inherit;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  font-family: "ArkPixel", monospace;
+}
+
+@media (max-width: 768px) {
+  .data-page {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,11 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+
+  <div class="data-list">
+    <a href="/save/data1/" class="data-link">DATA1</a>
+    <a href="/save/data2/" class="data-link">DATA2</a>
+    <a href="/save/data3/" class="data-link">DATA3</a>
+    <a href="/save/data4/" class="data-link">DATA4</a>
+  </div>
+{{ end }}

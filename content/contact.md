@@ -1,8 +1,4 @@
 ---
-draft: false
-title: 'Contact'
----
----
 title: "绑定"
 date: 2026-09-26
 draft: false

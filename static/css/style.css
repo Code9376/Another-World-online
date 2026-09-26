@@ -297,3 +297,8 @@ a {
   opacity: 0.6;
   font-size: 0.9em;
 }
+
+.at-symbol::before {
+  content: "✨️";  
+  margin: 0 0.1em;
+}

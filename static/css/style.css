@@ -216,3 +216,52 @@ a {
 .choice:hover {
   opacity: 1;
 }
+/* ============================================
+   最新更新方框
+   ============================================ */
+.updates-box {
+  border: 1px solid currentColor;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.updates-box h2 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.updates-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.updates-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.4rem 0;
+}
+
+/* 实心小圆点 */
+.updates-list li::before {
+  content: "●";
+  font-size: 0.5em;
+  margin-right: 0.6em;
+  line-height: 1.8;
+}
+
+.updates-list a {
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+.updates-list a:hover {
+  opacity: 1;
+}
+
+.updates-list time {
+  opacity: 0.5;
+  font-size: 0.85em;
+  white-space: nowrap;
+}

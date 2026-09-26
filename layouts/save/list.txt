@@ -3,9 +3,9 @@
   {{ .Content }}
 
   <div class="data-list">
-    <a href="/save/data1/" class="data-link">DATA1</a>
-    <a href="/save/data2/" class="data-link">DATA2</a>
-    <a href="/save/data3/" class="data-link">DATA3</a>
-    <a href="/save/data4/" class="data-link">DATA4</a>
+    <a href="/save/data1/" class="data-link">织梦</a>
+    <a href="/save/data2/" class="data-link">听风</a>
+    <a href="/save/data3/" class="data-link">观星</a>
+    <a href="/save/data4/" class="data-link">游钥</a>
   </div>
 {{ end }}

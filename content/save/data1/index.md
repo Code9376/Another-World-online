@@ -2,6 +2,7 @@
 title: "DATA 1   织梦"
 draft: false
 layout: "data"
+tooltip: "嗯……因为测试加还没画新立绘所以先这样吧"
 ---
 
 存档归属：zero/海谷雾

@@ -6,8 +6,11 @@
   </div>
 
   <div class="data-image">
-    {{ $imgs := .Resources.Match "*" }}
-    {{ $imgs = where $imgs "ResourceType" "image" }}
+    <div class="img-wrap">
+      <img id="data-img" src="" alt="{{ .Title }}">
+      <span class="img-tooltip">{{ .Params.tooltip }}</span>
+    </div>
+    <div class="data-thumbs">
 
     {{ if $imgs }}
       <img id="data-img" src="{{ (index $imgs 0).RelPermalink }}" alt="{{ .Title }}">

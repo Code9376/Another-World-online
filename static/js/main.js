@@ -91,3 +91,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 })();
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".data-image img").forEach(function (img) {
+    img.addEventListener("contextmenu", function (e) {
+      e.preventDefault();
+    });
+  });
+});

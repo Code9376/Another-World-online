@@ -18,19 +18,20 @@ document.addEventListener("DOMContentLoaded", function () {
   const holdAfterFinish = 1200;
   const fadeDuration = 800;
 
-  function typeText(el, text, callback) {
-    let i = 0;
-    function step() {
-      if (i < text.length) {
-        el.textContent += text.charAt(i);
-        i++;
-        setTimeout(step, speed);
-      } else if (callback) {
-        callback();
-      }
+ (function () {
+  const title = document.querySelector(".data-title");
+  if (!title) return;
+  const text = title.dataset.title || title.textContent;
+  title.textContent = "";
+  let i = 0;
+  (function type() {
+    if (i < text.length) {
+      title.textContent += text.charAt(i);
+      i++;
+      setTimeout(type, 150);
     }
-    step();
-  }
+  })();
+})();
 
   setTimeout(function () {
     typeText(line1, text1, function () {

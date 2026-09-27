@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="data-page">
   <div class="data-text">
-    <h1 class="data-title" data-title="{{ .Title }}">读取中……</h1>
+   <h1 class="data-title" data-title="{{ .Title }}">读取中……</h1>
     {{ .Content }}
   </div>
 

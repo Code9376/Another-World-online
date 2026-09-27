@@ -18,20 +18,19 @@ document.addEventListener("DOMContentLoaded", function () {
   const holdAfterFinish = 1200;
   const fadeDuration = 800;
 
- (function () {
-  const title = document.querySelector(".data-title");
-  if (!title) return;
-  const text = title.dataset.title || title.textContent;
-  title.textContent = "";
-  let i = 0;
-  (function type() {
-    if (i < text.length) {
-      title.textContent += text.charAt(i);
-      i++;
-      setTimeout(type, 150);
+  function typeText(el, text, callback) {
+    let i = 0;
+    function step() {
+      if (i < text.length) {
+        el.textContent += text.charAt(i);
+        i++;
+        setTimeout(step, speed);
+      } else if (callback) {
+        callback();
+      }
     }
-  })();
-})();
+    step();
+  }
 
   setTimeout(function () {
     typeText(line1, text1, function () {
@@ -48,7 +47,53 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }, 2700);
 });
-// 回到顶部按钮
+
+document.addEventListener("DOMContentLoaded", function () {
+  const title = document.querySelector(".data-title");
+  if (!title) return;
+
+  const text = title.dataset.title || title.textContent;
+  title.textContent = "";
+  let i = 0;
+
+  (function type() {
+    if (i < text.length) {
+      title.textContent += text.charAt(i);
+      i++;
+      setTimeout(type, 150);
+    }
+  })();
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const mainImg = document.getElementById("data-img");
+  const prev = document.querySelector(".thumb.prev");
+  const next = document.querySelector(".thumb.next");
+  const images = window.__dataImages;
+
+  if (!mainImg || !images || images.length === 0) return;
+
+  let index = 0;
+
+  function show(i) {
+    index = (i + images.length) % images.length;
+    mainImg.src = images[index];
+  }
+
+  if (prev) prev.addEventListener("click", function () { show(index - 1); });
+  if (next) next.addEventListener("click", function () { show(index + 1); });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".data-image img").forEach(function (img) {
+    img.addEventListener("contextmenu", function (e) {
+      e.preventDefault();
+    });
+  });
+});
+    });
+  }, 2700);
+});
 (function () {
   const btn = document.getElementById("back-to-top");
   if (!btn) return;
@@ -65,14 +110,12 @@ document.addEventListener("DOMContentLoaded", function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 })();
-// 角色页：标题打字机 + 图片切换
 (function () {
   const title = document.querySelector(".data-title");
   if (title) {
     const text = title.dataset.title || title.textContent;
     title.textContent = "";
     let i = 0;
-// 角色页：左右箭头切换图片
 (function () {
   const mainImg = document.getElementById("data-img");
   const prev = document.querySelector(".thumb.prev");

@@ -6,14 +6,15 @@
   </div>
 
   <div class="data-image">
-    <div class="img-wrap">
-      <img id="data-img" src="" alt="{{ .Title }}">
-      <span class="img-tooltip">{{ .Params.tooltip }}</span>
-    </div>
-    <div class="data-thumbs">
+    {{ $imgs := .Resources.Match "*" }}
+    {{ $imgs = where $imgs "ResourceType" "image" }}
 
     {{ if $imgs }}
-      <img id="data-img" src="{{ (index $imgs 0).RelPermalink }}" alt="{{ .Title }}">
+      <div class="img-wrap">
+        <img id="data-img" src="{{ (index $imgs 0).RelPermalink }}" alt="{{ .Title }}">
+        <span class="img-tooltip">{{ .Params.tooltip }}</span>
+      </div>
+
       <div class="data-thumbs">
         {{ range $i, $img := $imgs }}
           <button class="thumb" data-src="{{ $img.RelPermalink }}">图{{ add $i 1 }}</button>

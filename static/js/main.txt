@@ -71,14 +71,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const text = title.dataset.title || title.textContent;
     title.textContent = "";
     let i = 0;
-    (function type() {
-      if (i < text.length) {
-        title.textContent += text.charAt(i);
-        i++;
-        setTimeout(type, 150);
-      }
-    })();
+// 角色页：左右箭头切换图片
+(function () {
+  const mainImg = document.getElementById("data-img");
+  const prev = document.querySelector(".thumb.prev");
+  const next = document.querySelector(".thumb.next");
+  const images = window.__dataImages;
+
+  if (!mainImg || !images || images.length === 0) return;
+
+  let index = 0;
+
+  function show(i) {
+    index = (i + images.length) % images.length;
+    mainImg.src = images[index];
   }
+
+  if (prev) prev.addEventListener("click", function () { show(index - 1); });
+  if (next) next.addEventListener("click", function () { show(index + 1); });
+})();
 
   const mainImg = document.getElementById("data-img");
   const thumbs = document.querySelectorAll(".thumb");

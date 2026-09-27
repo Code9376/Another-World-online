@@ -366,22 +366,6 @@ a {
 
 .data-image img {
   width: 100%;
-  border: 1px solid currentColor;
-}
-
-.data-thumbs {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 0.8rem;
-}
-
-.thumb {
-  border: 1px solid currentColor;
-  background: transparent;
-  color: inherit;
-  padding: 0.3rem 0.8rem;
-  cursor: pointer;
-  font-family: "ArkPixel", monospace;
 }
 
 @media (max-width: 768px) {
@@ -424,4 +408,37 @@ a {
 
 .img-wrap:hover .img-tooltip {
   opacity: 1;
+}
+
+.img-wrap {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.thumb {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: 1.5rem;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  font-family: "ArkPixel", monospace;
+  padding: 0.5rem;
+}
+
+.thumb:hover {
+  opacity: 1;
+}
+
+.thumb.prev {
+  left: 0;
+}
+
+.thumb.next {
+  right: 0;
 }

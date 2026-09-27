@@ -9,9 +9,6 @@
 <body>
   <div class="layout">
     <aside class="sidebar">
-      <div class="site-title">
-        <a href="/">{{ site.Title }}</a>
-      </div>
 <nav>
   <a href="/">再读取</a>
   <a href="/save/">载入存档</a>

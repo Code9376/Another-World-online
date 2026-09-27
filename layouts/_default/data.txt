@@ -12,29 +12,21 @@
     {{ if $imgs }}
       <div class="img-wrap">
         <img id="data-img" src="{{ (index $imgs 0).RelPermalink }}" alt="{{ .Title }}">
+
+        <button class="thumb prev" data-dir="-1">◀</button>
+        <button class="thumb next" data-dir="1">▶</button>
+
         <span class="img-tooltip">{{ .Params.tooltip }}</span>
       </div>
 
- <div class="data-image">
-  {{ $imgs := .Resources.Match "*" }}
-  {{ $imgs = where $imgs "ResourceType" "image" }}
-
-  {{ if $imgs }}
-    <div class="img-wrap">
-      <img id="data-img" src="{{ (index $imgs 0).RelPermalink }}" alt="{{ .Title }}">
-
-      <button class="thumb prev" data-dir="-1">◀</button>
-      <button class="thumb next" data-dir="1">▶</button>
-
-      <span class="img-tooltip">{{ .Params.tooltip }}</span>
-    </div>
-
-    <script>
-      window.__dataImages = [
-        {{ range $imgs }}"{{ .RelPermalink }}",{{ end }}
-      ];
-    </script>
-  {{ else }}
-    <p>（这个角色还没有上传图片）</p>
-  {{ end }}
+      <script>
+        window.__dataImages = [
+          {{ range $imgs }}"{{ .RelPermalink }}",{{ end }}
+        ];
+      </script>
+    {{ else }}
+      <p>（这个角色还没有上传图片）</p>
+    {{ end }}
+  </div>
 </div>
+{{ end }}

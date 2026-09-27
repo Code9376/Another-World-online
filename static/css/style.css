@@ -311,7 +311,7 @@ a {
   height: 40px;
   border: 1px solid currentColor;
   background: transparent;
-  color: inherit;
+  color: inherit;       
   font-size: 1.2rem;
   cursor: pointer;
   opacity: 0;
@@ -366,6 +366,21 @@ a {
 
 .data-image img {
   width: 100%;
+}
+
+.data-thumbs {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.thumb {
+  border: 1px solid currentColor;
+  background: transparent;
+  color: inherit;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  font-family: "ArkPixel", monospace;
 }
 
 @media (max-width: 768px) {

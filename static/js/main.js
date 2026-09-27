@@ -1,7 +1,11 @@
+// ============================================
+// 1. 首页开场动画 + 只播一次
+// ============================================
 document.addEventListener("DOMContentLoaded", function () {
   const intro = document.getElementById("intro");
   if (!intro) return;
 
+  // 本次会话已播放过，直接移除
   if (sessionStorage.getItem("introPlayed")) {
     intro.remove();
     return;
@@ -48,6 +52,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }, 2700);
 });
 
+// ============================================
+// 2. 角色页：标题打字机
+// ============================================
 document.addEventListener("DOMContentLoaded", function () {
   const title = document.querySelector(".data-title");
   if (!title) return;
@@ -65,6 +72,9 @@ document.addEventListener("DOMContentLoaded", function () {
   })();
 });
 
+// ============================================
+// 3. 角色页：左右箭头切换图片
+// ============================================
 document.addEventListener("DOMContentLoaded", function () {
   const mainImg = document.getElementById("data-img");
   const prev = document.querySelector(".thumb.prev");
@@ -84,68 +94,9 @@ document.addEventListener("DOMContentLoaded", function () {
   if (next) next.addEventListener("click", function () { show(index + 1); });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".data-image img").forEach(function (img) {
-    img.addEventListener("contextmenu", function (e) {
-      e.preventDefault();
-    });
-  });
-});
-    });
-  }, 2700);
-});
-(function () {
-  const btn = document.getElementById("back-to-top");
-  if (!btn) return;
-
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 300) {
-      btn.classList.add("visible");
-    } else {
-      btn.classList.remove("visible");
-    }
-  });
-
-  btn.addEventListener("click", function () {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-})();
-(function () {
-  const title = document.querySelector(".data-title");
-  if (title) {
-    const text = title.dataset.title || title.textContent;
-    title.textContent = "";
-    let i = 0;
-(function () {
-  const mainImg = document.getElementById("data-img");
-  const prev = document.querySelector(".thumb.prev");
-  const next = document.querySelector(".thumb.next");
-  const images = window.__dataImages;
-
-  if (!mainImg || !images || images.length === 0) return;
-
-  let index = 0;
-
-  function show(i) {
-    index = (i + images.length) % images.length;
-    mainImg.src = images[index];
-  }
-
-  if (prev) prev.addEventListener("click", function () { show(index - 1); });
-  if (next) next.addEventListener("click", function () { show(index + 1); });
-})();
-
-  const mainImg = document.getElementById("data-img");
-  const thumbs = document.querySelectorAll(".thumb");
-  if (mainImg && thumbs.length) {
-    mainImg.src = thumbs[0].dataset.src;
-    thumbs.forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        mainImg.src = btn.dataset.src;
-      });
-    });
-  }
-})();
+// ============================================
+// 4. 角色页图片禁用右键
+// ============================================
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".data-image img").forEach(function (img) {
     img.addEventListener("contextmenu", function (e) {
